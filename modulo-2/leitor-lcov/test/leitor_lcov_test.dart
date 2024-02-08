@@ -3,8 +3,8 @@ import 'package:test/test.dart';
 
 void main() {
   test('deve pegar porcentagem de cobertura', () {
-    final result = coverage('./coverage/lcv.info');
+    final result = coverage('./coverage/lcov.info');
 
-    expect(result, '100%');
+    expect(result, '88%');
   });
 }
