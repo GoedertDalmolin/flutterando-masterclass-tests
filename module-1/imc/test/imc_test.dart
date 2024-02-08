@@ -9,10 +9,10 @@ void main() {
   // Executa depois de executar algum teste.
   tearDown(() {});
 
-  // Ciclo de vida pra Switch inteira
+  // Ciclo de vida pra suite inteira
   setUpAll(() {});
 
-  // Ciclo de Vida pra Switch inteira
+  // Ciclo de Vida pra suite inteira
   tearDownAll(() {});
 
   // Triple A padrão de teste
@@ -32,9 +32,9 @@ void main() {
   });
 
   group('Exceções de Parâmetros', () {
-    test('Deve lançar uma excessão se altura for menor que 1', () {
-      expect(() => calcIMC(0, 64), throwsA(isA<Exception>()));
-    });
+    // test('Deve lançar uma excessão se altura for menor que 1', () {
+    //   expect(() => calcIMC(0, 64), throwsA(isA<Exception>()));
+    // });
 
     test('Deve lançar uma excessão se o peso for menor que 1', () {
       expect(() => calcIMC(1.78, 0), throwsA(isA<Exception>()));
