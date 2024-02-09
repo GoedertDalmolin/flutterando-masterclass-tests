@@ -1,5 +1,3 @@
-
-
 import 'package:api_service/api_service.dart';
 import 'package:api_service/product.dart';
 import 'package:mocktail/mocktail.dart';
@@ -12,8 +10,13 @@ class UnoMock extends Mock implements Uno {}
 class ResponseMock extends Mock implements Response {}
 
 void main() {
+  final uno = UnoMock();
+
+  tearDown(() {
+    reset(uno);
+  });
+
   test('deve retornar uma lista de product', () {
-    final uno = UnoMock();
     final response = ResponseMock();
 
     when(() => response.data).thenReturn(productListJson);
@@ -33,8 +36,6 @@ void main() {
   test(
       'deve retornar uma lista de Product '
       'vazia quando houver uma falha', () {
-    final uno = UnoMock();
-
     when(() => uno.get(any())).thenThrow(UnoError('error'));
 
     final service = ApiService(uno: uno);
