@@ -14,7 +14,7 @@ void main() {
 
     // Tap the '+' icon and trigger a frame.
     await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.pump(const Duration(seconds: 2));
 
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
