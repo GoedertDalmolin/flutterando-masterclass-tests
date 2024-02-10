@@ -110,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
+              key: const Key('counterValue'),
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
